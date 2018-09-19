@@ -1,0 +1,94 @@
+---
+title: "hw01_gapminder"
+author: "Thomas Smith"
+date: '2018-09-18'
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+This document is part of Assignment 1 for STAT 545A course taught at the University of British Columbia. This component of the assignment is to demonstrate the student's ability to create an R Markdown file, and use it to explore a dataset. For this assignment, I have decided to use the 'mtcars' dataset. 
+
+## Data exploration
+
+We can see the dataset as a whole:
+
+```{r}
+mtcars
+```
+
+Or look at the first 6 rows:
+```{r}
+head(mtcars)
+```
+
+Or last six rows:
+
+```{r}
+tail(mtcars)
+```
+
+
+We can also look at specific attributes of this dataset, such as:
+
+### Structure
+
+```{r}
+str(mtcars)
+```
+
+### Class
+
+```{r}
+class(mtcars)
+```
+ 
+### Variables
+
+```{r}
+names(mtcars)
+```
+
+We can see general dimensions of the dataset with, shown as rows, then collumns:
+
+```{r}
+dim(mtcars)
+```
+
+
+Or specfically the rows included.
+
+```{r}
+nrow(mtcars)
+```
+
+And if we want a summary of statistics, it's simple!
+
+```{r}
+summary(mtcars)
+```
+
+## Data Visualization
+Although we have not gotten too into detail in regard to data visualization, here are some basic functions. This is horsepower (hp) plotted with number of cylinders (cyl).
+
+```{r}
+plot(cyl ~ hp, mtcars)
+```
+
+Or 1/4 mile time (qsec) plotted with horsepower (hp)...
+```{r}
+plot(hp ~ qsec, mtcars)
+```
+
+We can even make histograms. This shows the frequency of cars in the dataset with different number of cylinders.
+```{r}
+hist(mtcars$cyl)
+```
+
+And there you have it, some fun data exploration using R Markdown!
+
+
